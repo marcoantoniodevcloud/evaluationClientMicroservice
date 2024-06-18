@@ -7,6 +7,7 @@ import com.evaluation.client.utils.Constants;
 import com.evaluation.client.utils.Encryption;
 
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.Valid;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -31,7 +32,7 @@ public class ClientController {
     }
 
     @PostMapping
-    public ResponseEntity<Client> createClient(@RequestBody Client client, HttpServletRequest request) {
+    public ResponseEntity<Client> createClient(@Valid @RequestBody Client client, HttpServletRequest request) {
         if (!isValidDataHeader(request)) {
             return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         }
@@ -39,7 +40,7 @@ public class ClientController {
     }
 
     @PutMapping
-    public ResponseEntity<Client> updateclient(@RequestBody Client client, HttpServletRequest request) {
+    public ResponseEntity<Client> updateclient(@Valid @RequestBody Client client, HttpServletRequest request) {
         if (!isValidDataHeader(request)) {
             return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         }

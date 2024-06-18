@@ -1,5 +1,8 @@
 package com.evaluation.client.utils;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Encryption {
     public String resolveSha256(String base) {
         try {
