@@ -56,6 +56,7 @@ public class ClientController {
         return new ResponseEntity<>(clientService.createOrUpdateClient(client), HttpStatus.OK);
     }
 
+    @Operation(summary = "Get By RFC")
     @GetMapping("/{rfc}")
     public ResponseEntity<Client> getclientByRfc(@PathVariable String rfc, HttpServletRequest request) {
         if (!isValidDataHeader(request)) {

@@ -85,6 +85,13 @@ Method: Get
 Header: DATA = e38d91567f74abfed468f8175b8eb59b427ddc2997c420ec4137acf3f58bfbcc
 
 ```
+RFC
+```
+Route:{Domain}/clients/MANM950214CC8  !!Insert first and use one data RFC 
+Method: Get 
+Header: DATA = e38d91567f74abfed468f8175b8eb59b427ddc2997c420ec4137acf3f58bfbcc
+
+```
 
 you can update, list with the appropiate methods
 ## Swagger
