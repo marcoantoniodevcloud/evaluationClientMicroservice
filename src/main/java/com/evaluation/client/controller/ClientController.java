@@ -1,6 +1,5 @@
 package com.evaluation.client.controller;
 
-
 import com.evaluation.client.model.Client;
 import com.evaluation.client.service.ClientService;
 import com.evaluation.client.utils.Constants;
@@ -12,9 +11,9 @@ import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -27,11 +26,14 @@ public class ClientController {
     Encryption encryption;
 
     @GetMapping
-    public ResponseEntity<List<Client>> getAllClients( HttpServletRequest request) {
+    public ResponseEntity<Page<Client>> getAllClients(
+            HttpServletRequest request,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size) {
         if (!isValidDataHeader(request)) {
             return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         }
-        return new ResponseEntity<>(clientService.getAllClients(), HttpStatus.OK);
+        return new ResponseEntity<>(clientService.getAllClients(page, size), HttpStatus.OK);
     }
 
     @PostMapping
@@ -65,6 +67,4 @@ public class ClientController {
         return dataHeader != null && dataHeader.equals(encryption.resolveSha256(Constants.VALUE_HEADER));
     }
 
-    
 }
-
