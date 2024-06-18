@@ -11,17 +11,17 @@ import java.util.Optional;
 @Service
 public class ClientService {
     @Autowired
-    private ClientRepository clienteRepository;
+    private ClientRepository clientRepository;
 
-    public List<Client> getAllClientes() {
-        return clienteRepository.findAll();
+    public List<Client> getAllClients() {
+        return clientRepository.findAll();
     }
 
-    public Optional<Client> getClienteByRfc(String rfc) {
-        return clienteRepository.findByRfc(rfc);
+    public Optional<Client> getClientByRfc(String rfc) {
+        return clientRepository.findByRfc(rfc);
     }
 
-    public Client createOrUpdateCliente(Client cliente) {
-        return clienteRepository.save(cliente);
+    public Client createOrUpdateClient(Client client) {
+        return clientRepository.save(client);
     }
 }
