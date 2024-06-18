@@ -96,3 +96,5 @@ Header: DATA = e38d91567f74abfed468f8175b8eb59b427ddc2997c420ec4137acf3f58bfbcc
 you can update, list with the appropiate methods
 ## Swagger
 {domain}/swagger-ui/index.html
+## Redis
+I recommend use the container for redis https://hub.docker.com/_/redis you can see the logs the second time you call the RFC endpoint and you can see the log: Client found in cache
