@@ -33,7 +33,7 @@ Creación de Test unitarios (utilizar mock y Mockito)
 ✅Si es base de datos Relacional adjuntar scripts de creación de la base y tabla
 ✅Opcional puedes agregar un ORM para la persistencia.(Hibernate)
 Opcional Puedes agregar un Cache con redis en la consulta del cliente por RFC.
-Opcional Se habilite swagger de los endpoints habilitados
+✅Opcional Se habilite swagger de los endpoints habilitados
 ✅Opcional Consulta de todos los registros de los clientes con paginación.
 Opcional al insertar o actualizar un registro, enviar un mensaje a una cola de mensaje, de preferencia RabbitMQ
 Opcional implementar el consumo de los mensajes del RabbitMQ e insertarlos en la base de datos
@@ -87,3 +87,5 @@ Header: DATA = e38d91567f74abfed468f8175b8eb59b427ddc2997c420ec4137acf3f58bfbcc
 ```
 
 you can update, list with the appropiate methods
+## Swagger
+{domain}/swagger-ui/index.html

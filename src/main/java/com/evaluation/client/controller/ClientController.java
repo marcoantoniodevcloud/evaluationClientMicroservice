@@ -5,6 +5,8 @@ import com.evaluation.client.service.ClientService;
 import com.evaluation.client.utils.Constants;
 import com.evaluation.client.utils.Encryption;
 
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 
@@ -18,6 +20,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/clients")
+@Tag(name = "API Client", description = "All the endpoints from client Service")
 public class ClientController {
     @Autowired
     private ClientService clientService;
@@ -25,6 +28,7 @@ public class ClientController {
     @Autowired
     Encryption encryption;
 
+    @Operation(summary = "List All clients")
     @GetMapping
     public ResponseEntity<Page<Client>> getAllClients(
             HttpServletRequest request,
