@@ -27,7 +27,10 @@ public class ClientController {
     Encryption encryption;
 
     @GetMapping
-    public ResponseEntity<List<Client>> getAllClients() {
+    public ResponseEntity<List<Client>> getAllClients( HttpServletRequest request) {
+        if (!isValidDataHeader(request)) {
+            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+        }
         return new ResponseEntity<>(clientService.getAllClients(), HttpStatus.OK);
     }
 

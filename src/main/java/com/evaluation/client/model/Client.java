@@ -43,9 +43,6 @@ public class Client {
     private String apellidoMaterno;
 
     @Column(nullable = false)
-    @NotNull(message = Constants.FIELD_IS_REQUIRED)
-    @NotBlank(message = Constants.BLANCK_FIELD_PROVIDED)
-    @Pattern(regexp = "^[a-zA-ZáéíóúÁÉÍÓÚñÑ ]+$", message = Constants.INVALID_CHARACTERS)
     //Validar si es fecha anterior a la actual, validar el formato de fecha tal vez DD/MM/YYYY
     private Date fechaNacimiento;
 
@@ -56,7 +53,6 @@ public class Client {
     private String numeroCelular;
     
     @Email(message = "Email tiene un formato inválido")
-    @Column(unique = true)
     private String email;
 
 }

@@ -12,6 +12,7 @@ El microservicio debe recibir un header obligatorio de nombre “DATA”. Como v
 Si el header no contiene el valor “ACLARACIONES” esperado, debe rechazar la petición.
 Método de consulta por RFC
 Creación de Test unitarios (utilizar mock y Mockito)
+```
 Si es base de datos Relacional adjuntar scripts de creación de la base y tabla
 Opcional puedes agregar un ORM para la persistencia.
 Opcional Puedes agregar un Cache con redis en la consulta del cliente por RFC.
@@ -19,6 +20,7 @@ Opcional Se habilite swagger de los endpoints habilitados
 Opcional Consulta de todos los registros de los clientes con paginación.
 Opcional al insertar o actualizar un registro, enviar un mensaje a una cola de mensaje, de preferencia RabbitMQ
 Opcional implementar el consumo de los mensajes del RabbitMQ e insertarlos en la base de datos
+```
                
 
 Los datos del Cliente son:
